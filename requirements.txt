@@ -1,0 +1,28 @@
+# Wildmeta RSS Macro/Crypto Bot - Dependencies
+# Core RSS and HTTP libraries
+feedparser>=6.0.10
+httpx>=0.24.0
+
+# Content extraction and parsing
+trafilatura>=1.6.0
+readability-lxml>=0.8.1
+beautifulsoup4>=4.12.0
+
+# Natural Language Processing and Sentiment Analysis
+nltk>=3.8.1
+transformers>=4.30.0
+torch>=2.0.0
+
+# Retry logic and utilities
+tenacity>=8.2.0
+python-dateutil>=2.8.2
+python-dotenv>=1.0.0
+
+# For X/Twitter Bot (wildmeta_x_feed_bot.py)
+aiofiles>=23.0.0  # Async file operations
+
+# Optional: For better performance and additional features
+# lxml>=4.9.0  # Faster XML parsing (optional - but recommended for BeautifulSoup)
+# uvloop>=0.17.0  # Faster event loop on Unix (optional)
+# tweepy>=4.14.0  # Official Twitter API client (if you have API access)
+# snscrape>=0.7.0  # Social media scraping (alternative to Nitter)

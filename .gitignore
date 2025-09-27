@@ -1,0 +1,130 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.manifest
+*.spec
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv/
+.ENV/
+.env/
+Include/
+Lib/
+Scripts/
+pyvenv.cfg
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+*.env
+!config.template
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+.benchmarks/
+
+# Documentation builds
+docs/_build/
+site/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# Machine Learning Models Cache
+models/
+*.pkl
+*.h5
+*.pt
+*.pth
+*.onnx
+
+# Hugging Face cache
+.cache/
+transformers_cache/
+huggingface/
+
+# NLTK data
+nltk_data/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+tmp/
+temp/
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Project specific
+bot.db
+x_bot.db
+*.db-journal
+*.db-wal
+*.db-shm
+main/.env
+main/*.db
+main/*.db-*
+
+# Keep these files
+!README.md
+!QUICKSTART.md
+!requirements.txt
+!config.template
+!main/rss_macro_crypto_bot.py
+!main/wildmeta_x_feed_bot.py
+!main/start_bots.bat

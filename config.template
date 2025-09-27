@@ -1,0 +1,88 @@
+# Wildmeta RSS Macro/Crypto Bot - Environment Configuration Template
+# Copy this file to .env in the main directory and fill in your actual values
+
+# =============================================================================
+# REQUIRED CONFIGURATION
+# =============================================================================
+
+# Telegram Bot Token (get from @BotFather)
+# Example: 1234567890:ABCdefGHIjklMNOpqrsTUVwxyz
+BOT_TOKEN=your_telegram_bot_token_here
+
+# Telegram Chat ID (negative number for groups/channels)
+# Example: -1001234567890
+CHAT_ID=your_telegram_chat_id_here
+
+# =============================================================================
+# OPTIONAL CONFIGURATION
+# =============================================================================
+
+# Telegram Thread/Topic ID (optional, for topic-based chats)
+# Example: 5
+THREAD_ID=
+
+# Feed polling interval in seconds (default: 180 = 3 minutes)
+# Recommended: 180-600 (3-10 minutes)
+POLL_SECONDS=180
+
+# SQLite database path (default: ./bot.db)
+# Use absolute path for production deployments
+DB_PATH=./bot.db
+
+# Timezone for timestamps (default: Asia/Singapore)
+# Common options: UTC, America/New_York, Europe/London, Asia/Tokyo
+REGION_TZ=Asia/Singapore
+
+# Strict filtering mode (default: false)
+# true = only post articles with strong keyword matches
+# false = post articles with any macro OR crypto keywords
+POST_ONLY_ON_STRONG_MATCH=false
+
+# Maximum article age in days (default: 2)
+# Articles older than this will be skipped during backfill
+MAX_AGE_DAYS=2
+
+# =============================================================================
+# X/TWITTER BOT CONFIGURATION (for wildmeta_x_feed_bot.py)
+# =============================================================================
+
+# Thread ID for X posts in Telegram (required for X bot)
+# This is the specific topic/thread where X posts will be sent
+X_THREAD_ID=711
+
+# X/Twitter username to monitor (without @)
+X_USERNAME=wildmetaHQ
+
+# X bot polling interval in seconds (default: 300 = 5 minutes)
+X_POLL_SECONDS=300
+
+# X bot database path (tracks seen posts)
+X_DB_PATH=./x_bot.db
+
+# Maximum posts to process per cycle (default: 5)
+X_MAX_POSTS_PER_CYCLE=5
+
+# =============================================================================
+# SETUP INSTRUCTIONS
+# =============================================================================
+#
+# 1. Get Telegram Bot Token:
+#    - Message @BotFather on Telegram
+#    - Use /newbot command
+#    - Follow instructions and copy the token
+#
+# 2. Get Chat ID:
+#    - Add your bot to a group/channel
+#    - Send a message to the group
+#    - Visit: https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates
+#    - Find the "chat":{"id":-1001234567890} in the response
+#
+# 3. Configure Thread ID (if using topics):
+#    - Create a topic in your group
+#    - The thread ID will be shown in the getUpdates response
+#
+# 4. Test your configuration:
+#    - Run the bot and check for "Starting. Feeds: 40" message
+#    - Verify posts appear in your Telegram chat
+#
+# =============================================================================
