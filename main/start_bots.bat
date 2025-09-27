@@ -1,10 +1,10 @@
 @echo off
 REM Wildmeta Intelligence Suite - Bot Launcher
-REM This script starts both the RSS and X bots in separate windows
+REM This script starts the unified bot manager
 
 echo ========================================
 echo    Wildmeta Intelligence Suite
-echo    Starting RSS and X Feed Bots...
+echo    Unified Bot Manager
 echo ========================================
 echo.
 
@@ -23,22 +23,35 @@ if exist "..\venv\Scripts\activate.bat" (
     call ..\venv\Scripts\activate.bat
 )
 
-REM Start RSS Macro/Crypto Bot
-echo Starting RSS Macro/Crypto Bot...
-start "Wildmeta RSS Bot" cmd /k "python rss_macro_crypto_bot.py"
-
-REM Wait a moment before starting second bot
-timeout /t 2 /nobreak >nul
-
-REM Start X Feed Bot
-echo Starting X Feed Bot...
-start "Wildmeta X Bot" cmd /k "python wildmeta_x_feed_bot.py"
-
+REM Display options
+echo Select operation mode:
+echo   1. Run both bots (RSS + X)
+echo   2. Run RSS bot only
+echo   3. Run X bot only
+echo   4. Check bot status
+echo   5. Exit
 echo.
-echo ========================================
-echo    Both bots started successfully!
-echo    Check the opened windows for logs.
-echo ========================================
-echo.
-echo Press any key to close this window...
-pause >nul
+set /p choice="Enter your choice (1-5): "
+
+if "%choice%"=="1" (
+    echo Starting both bots...
+    python wildmeta_bot_manager.py
+) else if "%choice%"=="2" (
+    echo Starting RSS bot only...
+    python wildmeta_bot_manager.py --rss
+) else if "%choice%"=="3" (
+    echo Starting X bot only...
+    python wildmeta_bot_manager.py --x
+) else if "%choice%"=="4" (
+    echo Checking bot status...
+    python wildmeta_bot_manager.py --status
+    echo.
+    pause
+) else if "%choice%"=="5" (
+    echo Exiting...
+    exit /b 0
+) else (
+    echo Invalid choice!
+    pause
+    exit /b 1
+)
